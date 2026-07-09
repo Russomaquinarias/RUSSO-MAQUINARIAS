@@ -1,0 +1,138 @@
+.catalog {
+  padding: 100px 0;
+  background-color: var(--color-dark-gray);
+}
+
+.catalog-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.catalog-subtitle {
+  color: var(--color-light-gray);
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.product-card {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-medium-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(244, 180, 26, 0.1);
+}
+
+.product-image {
+  height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  border-bottom: 3px solid var(--color-primary);
+  background-color: var(--color-black);
+}
+
+.product-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 5px 15px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.product-content {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.product-desc {
+  font-size: 0.95rem;
+  color: var(--color-light-gray);
+  margin-bottom: 25px;
+  min-height: 60px;
+}
+
+.product-details {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .product-details {
+    flex-direction: column;
+  }
+}
+
+.detail-section {
+  flex: 1;
+}
+
+.detail-section h4 {
+  font-size: 0.8rem;
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-medium-gray);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.detail-section ul {
+  font-size: 0.85rem;
+  color: var(--color-light-gray);
+}
+
+.detail-section li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.product-footer {
+  border-top: 1px solid var(--color-medium-gray);
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.operarios-badge, .ideal-badge {
+  background-color: var(--color-dark-gray);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--color-light-gray);
+}
+
+.operarios-badge strong {
+  color: var(--color-primary);
+}

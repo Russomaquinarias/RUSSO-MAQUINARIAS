@@ -1,0 +1,97 @@
+.contact {
+  padding: 100px 0;
+  background-color: var(--color-black);
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.contact-text {
+  flex: 1;
+}
+
+.contact-text p {
+  color: var(--color-light-gray);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.contact-benefits {
+  color: var(--color-white);
+}
+
+.contact-benefits li {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.contact-form-container {
+  flex: 1;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--color-medium-gray);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-light-gray);
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: var(--color-dark-gray);
+  border: 1px solid var(--color-medium-gray);
+  color: var(--color-white);
+  border-radius: 4px;
+  font-family: var(--font-main);
+  transition: var(--transition);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.form-checkbox label {
+  font-size: 0.8rem;
+  color: var(--color-light-gray);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}
