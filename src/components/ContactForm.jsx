@@ -33,8 +33,8 @@ const ContactForm = ({ onNavigate }) => {
     // Creamos el enlace a WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
     
-    // Abrimos WhatsApp en una nueva pestaña
-    window.open(whatsappUrl, '_blank');
+    // Abrimos WhatsApp directamente para evitar bloqueadores de popups en celulares
+    window.location.href = whatsappUrl;
   };
 
   return (

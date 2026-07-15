@@ -5,6 +5,7 @@ import Catalog from './components/Catalog';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import Legales from './pages/Legales';
+import WhatsAppButton from './components/WhatsAppButton';
 import './index.css';
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
       )}
       
       <Footer onNavigate={handleNavigate} />
+      <WhatsAppButton />
     </div>
   );
 }
