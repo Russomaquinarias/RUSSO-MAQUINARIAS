@@ -18,8 +18,8 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .product-card {
@@ -89,9 +89,24 @@
   flex: 1;
 }
 
+@media (max-width: 768px) {
+  .catalog {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .catalog-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 480px) {
   .product-details {
     flex-direction: column;
+  }
+  .product-image {
+    height: 200px;
   }
 }
 
