@@ -3,6 +3,16 @@ import './ContactForm.css';
 
 const ContactForm = ({ onNavigate }) => {
   const [agreed, setAgreed] = useState(false);
+  const [formData, setFormData] = useState({
+    nombre: '',
+    telefono: '',
+    email: '',
+    mensaje: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,7 +20,21 @@ const ContactForm = ({ onNavigate }) => {
       alert("Debes aceptar la Política de Privacidad (Ley 25.326) para continuar.");
       return;
     }
-    alert("Mensaje enviado correctamente. Nos pondremos en contacto a la brevedad.");
+    
+    // El número de Russo Maquinarias que sacamos del pie de página
+    const phoneNumber = "5493516562992";
+    
+    // Armamos el mensaje predefinido con los datos del formulario
+    const text = `Hola Russo Maquinarias!\n\n*Nombre:* ${formData.nombre}\n*Teléfono:* ${formData.telefono}\n*Email:* ${formData.email}\n*Mensaje:* ${formData.mensaje}\n\n_(El usuario aceptó la Política de Privacidad)_`;
+    
+    // Codificamos el texto para que funcione en una URL
+    const encodedText = encodeURIComponent(text);
+    
+    // Creamos el enlace a WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+    
+    // Abrimos WhatsApp en una nueva pestaña
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -31,22 +55,22 @@ const ContactForm = ({ onNavigate }) => {
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
                 <label>Nombre y Apellido *</label>
-                <input type="text" required placeholder="Ej: Juan Pérez" />
+                <input type="text" name="nombre" required placeholder="Ej: Juan Pérez" value={formData.nombre} onChange={handleChange} />
               </div>
               
               <div className="form-group">
                 <label>Teléfono / WhatsApp *</label>
-                <input type="tel" required placeholder="+54 9 351..." />
+                <input type="tel" name="telefono" required placeholder="+54 9 351..." value={formData.telefono} onChange={handleChange} />
               </div>
               
               <div className="form-group">
                 <label>Email *</label>
-                <input type="email" required placeholder="tuemail@ejemplo.com" />
+                <input type="email" name="email" required placeholder="tuemail@ejemplo.com" value={formData.email} onChange={handleChange} />
               </div>
 
               <div className="form-group">
                 <label>Mensaje</label>
-                <textarea rows="4" placeholder="¿En qué maquinaria estás interesado?"></textarea>
+                <textarea name="mensaje" rows="4" placeholder="¿En qué maquinaria estás interesado?" value={formData.mensaje} onChange={handleChange}></textarea>
               </div>
 
               <div className="form-checkbox">
